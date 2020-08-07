@@ -2,7 +2,7 @@ const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
 const Youtube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-const { youtubeAPI } = youtubeAPI;
+const { youtubeAPI } = process.env.youtubeAPI;
 const youtube = new Youtube(process.env.youtubeAPI);
 
 module.exports = class PlayCommand extends Command {

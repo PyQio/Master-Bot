@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const { tenorAPI } = tenorAPI;
+const { tenorAPI } = process.env.tenorAPI;
 const { Command } = require('discord.js-commando');
 
 module.exports = class CatCommand extends Command {
