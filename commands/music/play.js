@@ -45,7 +45,7 @@ module.exports = class PlayCommand extends Command {
       query.match(
         /^(?!.*\?.*\bv=)https:\/\/www\.youtube\.com\/.*\?.*\blist=.*$/
       )
-    ) {
+    ) { 
       const playlist = await youtube.getPlaylist(query).catch(function() {
         return message.say('Playlist is either private or it does not exist!');
       });
