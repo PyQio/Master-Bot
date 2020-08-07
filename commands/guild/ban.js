@@ -31,9 +31,7 @@ module.exports = class BanCommand extends Command {
   async run(message, { userToBan, reason }) {
     const extractNumber = /\d+/g;
     const userToBanID = userToBan.match(extractNumber)[0];
-    const user =
-      message.mentions.members.first() ||
-      (await message.guild.members.fetch(userToBanID));
+    const user = message.mentions.members.first() || (await message.guild.members.fetch(userToBanID));
     if (user == undefined)
       return message.channel.send('Please try again with a valid user');
     user
