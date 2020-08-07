@@ -1,7 +1,7 @@
 const { CommandoClient } = require('discord.js-commando');
 const { Structures } = require('discord.js');
 const path = require('path');
-const { prefix } = '+'
+const prefix  = '+'
 
 Structures.extend('Guild', function(Guild) {
   class MusicGuild extends Guild {
@@ -12,7 +12,7 @@ Structures.extend('Guild', function(Guild) {
         isPlaying: false,
         nowPlaying: null,
         songDispatcher: null,
-        volume: 1
+        volume: 0.7
       };
       this.triviaData = {
         isTriviaRunning: false,
@@ -49,7 +49,7 @@ client.registry
 client.once('ready', () => {
   console.log('Ready!');
   client.user.setActivity(`${prefix}help`, {
-    type: 'WATCHING',
+    type: 'WATCHING ',
     url: 'https://github.com/PyQio/Master-Bot'
   });
 });
