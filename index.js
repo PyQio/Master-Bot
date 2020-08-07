@@ -50,7 +50,7 @@ client.once('ready', () => {
   console.log('Ready!');
   client.user.setActivity(`${prefix}help`, {
     type: 'WATCHING',
-    url: 'https://github.com/galnir/Master-Bot'
+    url: 'https://github.com/PyQio/Master-Bot'
   });
 });
 
@@ -76,7 +76,7 @@ client.on('voiceStateUpdate', async (___, newState) => {
 });
 
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === 'general'); // change this to the channel name you want to send the greeting to
+  const channel = member.guild.channels.cache.find(ch => ch.name === 'testbot'); // change this to the channel name you want to send the greeting to
   if (!channel) return;
   channel.send(`Welcome ${member}!`);
 });
