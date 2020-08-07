@@ -21,7 +21,7 @@ module.exports = class RemoveSongCommand extends Command {
     if (songNumber < 1 && songNumber >= message.guild.musicData.queue.length) {
       return message.reply('Please enter a valid song number');
     }
-    var voiceChannel = message.member.voice.channel;
+    let voiceChannel = message.member.voice.channel;
     if (!voiceChannel) return message.reply('Join a channel and try again');
 
     if (

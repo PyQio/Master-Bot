@@ -43,19 +43,19 @@ module.exports = class TranslateCommand extends Command {
 
     try {
       const filter = msg => msg.content.length > 0 && msg.content.length < 3000;
-      var response = await message.channel.awaitMessages(filter, {
+      let response = await message.channel.awaitMessages(filter, {
         max: 1,
         maxProcessed: 1,
         time: 90000,
         errors: ['time']
       });
-      var text = response.first().content;
+      let text = response.first().content;
     } catch (e) {
       return message.channel.send('You did not enter any text!');
     }
 
     try {
-      var res = await fetch(
+      let res = await fetch(
         // Powered by Yandex.Translate http://translate.yandex.com/
         `https://translate.yandex.net/api/v1.5/tr.json/translate?key=${yandexAPI}&text=${encodeURI(
           text

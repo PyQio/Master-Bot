@@ -13,7 +13,7 @@ module.exports = class LeaveCommand extends Command {
   }
 
   run(message) {
-    var voiceChannel = message.member.voice.channel;
+    let voiceChannel = message.member.voice.channel;
     if (!voiceChannel) {
       message.reply('Join a channel and try again');
       return;

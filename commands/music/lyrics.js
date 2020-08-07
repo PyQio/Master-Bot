@@ -49,14 +49,14 @@ module.exports = class LyricsCommand extends Command {
       /([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g,
       ''
     ); // remove emojis
-    var url = `https://api.genius.com/search?q=${encodeURI(songName)}`;
+    let url = `https://api.genius.com/search?q=${encodeURI(songName)}`;
 
     const headers = {
       Authorization: `Bearer ${geniusLyricsAPI}`
     };
     try {
-      var body = await fetch(url, { headers });
-      var result = await body.json();
+      let body = await fetch(url, { headers });
+      let result = await body.json();
       const songPath = result.response.hits[0].result.api_path;
       // get lyrics
       url = `https://api.genius.com${songPath}`;

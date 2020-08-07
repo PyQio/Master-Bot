@@ -54,7 +54,7 @@ module.exports = class RedditCommand extends Command {
         `Do you want to get the ${sort} posts from past hour/week/month/year or all?`
       );
       try {
-        var t = await message.channel.awaitMessages(
+        let t = await message.channel.awaitMessages(
           msg =>
             msg.content === 'hour' ||
             msg.content === 'week' ||
@@ -68,7 +68,7 @@ module.exports = class RedditCommand extends Command {
             errors: ['time']
           }
         );
-        var timeFilter = t.first().content;
+        let timeFilter = t.first().content;
       } catch (e) {
         console.error(e);
         return message.say('Please try again and enter a proper time filter');

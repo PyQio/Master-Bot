@@ -25,7 +25,7 @@ module.exports = class QueueCommand extends Command {
       titleArray.push(obj.title);
     });
     /* eslint-enable */
-    var queueEmbed = new MessageEmbed()
+    let queueEmbed = new MessageEmbed()
       .setColor('#ff7373')
       .setTitle('Music Queue');
     for (let i = 0; i < titleArray.length; i++) {

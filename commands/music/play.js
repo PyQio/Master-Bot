@@ -151,7 +151,7 @@ module.exports = class PlayCommand extends Command {
       .addField('Song 4', vidNameArr[3])
       .addField('Song 5', vidNameArr[4])
       .addField('Exit', 'exit');
-    var songEmbed = await message.channel.send({ embed });
+    let songEmbed = await message.channel.send({ embed });
     message.channel
       .awaitMessages(
         function(msg) {

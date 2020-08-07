@@ -13,7 +13,7 @@ module.exports = class SkipAllCommand extends Command {
   }
 
   run(message) {
-    var voiceChannel = message.member.voice.channel;
+    let voiceChannel = message.member.voice.channel;
     if (!voiceChannel) return message.reply('Join a channel and try again');
 
     if (

@@ -31,7 +31,7 @@ module.exports = class MusicTriviaCommand extends Command {
   }
   async run(message, { numberOfSongs }) {
     // check if user is in a voice channel
-    var voiceChannel = message.member.voice.channel;
+    let voiceChannel = message.member.voice.channel;
     if (!voiceChannel)
       return message.say('Please join a voice channel and try again');
     if (message.guild.musicData.isPlaying === true)
@@ -43,7 +43,7 @@ module.exports = class MusicTriviaCommand extends Command {
       'resources/music/musictrivia.json',
       'utf8'
     );
-    var videoDataArray = JSON.parse(jsonSongs).songs;
+    let videoDataArray = JSON.parse(jsonSongs).songs;
     // get random numberOfSongs videos from array
     const randomXVideoLinks = MusicTriviaCommand.getRandom(
       videoDataArray,
@@ -84,7 +84,7 @@ module.exports = class MusicTriviaCommand extends Command {
   }
 
   static async playQuizSong(queue, message) {
-    var classThis = this;
+    let classThis = this;
     queue[0].voiceChannel.join().then(function(connection) {
       const dispatcher = connection
         .play(
@@ -264,13 +264,13 @@ module.exports = class MusicTriviaCommand extends Command {
   }
 
   static getRandom(arr, n) {
-    var result = new Array(n),
+    let result = new Array(n),
       len = arr.length,
       taken = new Array(len);
     if (n > len)
       throw new RangeError('getRandom: more elements taken than available');
     while (n--) {
-      var x = Math.floor(Math.random() * len);
+      let x = Math.floor(Math.random() * len);
       // prettier-ignore
       result[n] = arr[(x in taken) ? taken[x] : x];
       // prettier-ignore

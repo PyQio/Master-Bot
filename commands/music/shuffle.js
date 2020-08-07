@@ -12,7 +12,7 @@ module.exports = class ShuffleQueueCommand extends Command {
     });
   }
   run(message) {
-    var voiceChannel = message.member.voice.channel;
+    let voiceChannel = message.member.voice.channel;
     if (!voiceChannel) return message.reply('Join a channel and try again');
 
     if (
@@ -31,9 +31,9 @@ module.exports = class ShuffleQueueCommand extends Command {
     message.guild.musicData.queue.slice(0, 10).forEach(obj => {
       titleArray.push(obj.title);
     });
-    var numOfEmbedFields = 10;
+    let numOfEmbedFields = 10;
     if (titleArray.length < 10) numOfEmbedFields = titleArray.length;
-    var queueEmbed = new MessageEmbed()
+    let queueEmbed = new MessageEmbed()
       .setColor('#ff7373')
       .setTitle('New Music Queue');
     for (let i = 0; i < numOfEmbedFields; i++) {
