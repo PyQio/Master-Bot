@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+/*const { MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch');
 const { newsAPI } = require('../../config.json');
 const { Command } = require('discord.js-commando');
@@ -51,3 +51,4 @@ module.exports = class GlobalNewsCommand extends Command {
     }
   }
 };
+*/
