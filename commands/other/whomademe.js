@@ -13,7 +13,7 @@ module.exports = class WhoMadeMeCommand extends Command {
 
   run(message) {
     message.say(
-      'Made by @hyperzone#1185 with :heart: full code is available on GitHub https://github.com/galnir/Master-Bot'
+      'Made by @PyQio#0047 with :heart: full code is available on GitHub https://github.com/pyqio/Master-Bot, forked from galnir/Master-Bot'
     );
   }
 };
